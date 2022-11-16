@@ -4,16 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="#778DA9"
+    tools:context=".MainActivity" >
 
     <TextView
+        android:id="@+id/titleCardTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello Git!"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="100dp"
+        android:outlineProvider="none"
+        android:text="CardGuess"
+        android:textColor="#E0E1DD"
+        android:textSize="60sp"
+        android:typeface="sans"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/rulesTextView"
+        android:layout_width="251dp"
+        android:layout_height="187dp"
+        android:layout_marginTop="100dp"
+        android:background="#E0E1DD"
+        android:lineSpacingExtra="3sp"
+        android:text="The rules are simple: two choices: higher or lower. You guess right, you get one point. But if you get it wrong, you lose. Click the button to start playing."
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleCardTextView" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="#DB3131"
+        android:backgroundTint="#0D1B2A"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rulesTextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
