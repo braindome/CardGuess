@@ -25,8 +25,8 @@
         android:id="@+id/rulesTextView"
         android:layout_width="251dp"
         android:layout_height="187dp"
-        android:layout_marginTop="100dp"
-        android:background="#E0E1DD"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/rounded_corner_view"
         android:lineSpacingExtra="3sp"
         android:text="The rules are simple: two choices: higher or lower. You guess right, you get one point. But if you get it wrong, you lose. Click the button to start playing."
         android:textAlignment="center"
@@ -35,15 +35,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleCardTextView" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/startTextView"
+        android:layout_width="146dp"
+        android:layout_height="34dp"
         android:layout_marginTop="50dp"
-        android:background="#DB3131"
+        android:background="@drawable/rounded_corner_view"
         android:backgroundTint="#0D1B2A"
-        android:text="Button"
+        android:text="START"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#E0E1DD"
+        android:textDirection="anyRtl"
+        android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rulesTextView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
