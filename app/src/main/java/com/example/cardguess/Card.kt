@@ -1,5 +1,5 @@
 package com.example.cardguess
 
-class Card(suit: String, value: Int) {
+class Card(var value: Int, var image: Int) {
 
 }
