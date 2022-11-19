@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/finalScoreView"
-        android:layout_width="407dp"
+        android:layout_width="0dp"
         android:layout_height="110dp"
         android:layout_marginTop="50dp"
         android:text="@string/final_score"

@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/_0_of_diamonds_svg" />
+        app:srcCompat="@drawable/eight_clubs" />
 
     <TextView
         android:id="@+id/gameTextView"
@@ -23,31 +23,12 @@
         android:layout_height="45dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/rounded_corner_view"
+        android:gravity="center"
         android:text="@string/game_desc"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardImageView" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gameTextView"
-        app:srcCompat="@drawable/minus_button" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="80dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gameTextView"
-        app:srcCompat="@drawable/plus_button" />
 
     <TextView
         android:id="@+id/streakTextView"
@@ -75,4 +56,34 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/minusButtonView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_corner_light"
+        android:gravity="center"
+        android:text="-"
+        android:textAlignment="center"
+        android:textDirection="locale"
+        android:textSize="60sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameTextView" />
+
+    <TextView
+        android:id="@+id/plusButtonView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="80dp"
+        android:background="@drawable/rounded_corner_dark"
+        android:gravity="center"
+        android:text="+"
+        android:textAlignment="center"
+        android:textColor="#E0E1DD"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameTextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
