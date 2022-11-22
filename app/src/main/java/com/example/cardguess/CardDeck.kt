@@ -1,16 +1,14 @@
 package com.example.cardguess
 
-import android.widget.ImageView
+import kotlin.random.Random
 
-object CardDeck {
+class CardDeck {
 
     val deck = mutableListOf<Card>()
 
-    lateinit var currentCard : Card
-    private val random : kotlin.random.Random = kotlin.random.Random
-
     init {
         initDeck()
+        deck.shuffle()
     }
 
     fun initDeck() {
@@ -70,10 +68,10 @@ object CardDeck {
 
     }
 
-    fun randomCard(image: ImageView) : Card {
-        currentCard = deck[random.nextInt(deck.size)]
-        image.setImageResource(currentCard.image)
-        return currentCard
+    fun randomCard(): Card {
+        return deck[Random.nextInt(deck.size)]
     }
+
+
 
 }
