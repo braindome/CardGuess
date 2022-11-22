@@ -18,6 +18,7 @@ class GameActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
+        play()
 
     }
 
@@ -31,26 +32,30 @@ class GameActivity : AppCompatActivity() {
         cardPicture = findViewById(R.id.randomCardImgView)
         score = findViewById(R.id.streakTextView)
 
+        // Shuffles and creates a current and a next card.
+        val startingCardValue = deck.randomCard(cardPicture).value
+        val nextCardValue = deck.randomCard(cardPicture).value
+
+        var currentScore = score.text.toString().toInt()
+
         lower.setOnClickListener() {
-            //TODO: card values and maths
-            val cardValue : Int = 0
-            var currentScore = score.text.toString().toInt()
-            if (deck.currentCard.value > cardValue) {
+
+
+            if (nextCardValue < startingCardValue) {
                 currentScore++
                 score.text = currentScore.toString()
-            }
+            } else currentScore--
 
         }
 
         higher.setOnClickListener() {
-            //TODO: card values and maths
-            val cardValue : Int = 0
-            var currentScore = score.text.toString().toInt()
-            if (deck.currentCard.value < cardValue) {
+
+
+            if (nextCardValue > startingCardValue) {
                 currentScore++
                 score.text = currentScore.toString()
 
-            }
+            } else currentScore--
 
         }
     }
