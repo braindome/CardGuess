@@ -72,6 +72,10 @@ class CardDeck {
         return deck[Random.nextInt(deck.size)]
     }
 
+    fun drawCard() : Card {
+        deck.shuffle()
+        return randomCard()
+    }
 
 
 }

@@ -1,5 +1,6 @@
 package com.example.cardguess
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
@@ -27,37 +28,56 @@ class GameActivity : AppCompatActivity() {
         cardPicture = findViewById(R.id.randomCardImgView)
         score = findViewById(R.id.streakTextView)
 
+
+
         play()
 
     }
 
 
-    //TODO Button functions and recalling to GameActivity. Quit button to EndActivity.
-    private fun play() {
+    //TODO Layout rework, make it prettier.
+    fun play() {
 
-        //var currentScore = score.text.toString().toInt()
-        var currentScore = 0
         val deck = CardDeck()
+        var currentScore = 0
         val startingCard = deck.randomCard()
-        val nextCard = deck.randomCard()
+        var nextCard = deck.randomCard()
+
+
         Log.d("!!!", startingCard.value.toString())
 
         cardPicture.setImageResource(startingCard.image)
 
         lower.setOnClickListener {
-
+            cardPicture.setImageResource(nextCard.image)
             if (nextCard.value < startingCard.value) {
                 currentScore++
                 score.text = currentScore.toString()
-            } else currentScore--
+            } else {
+                currentScore--
+                score.text = currentScore.toString()
+            }
+            nextCard = deck.drawCard()
         }
 
         higher.setOnClickListener {
-
+            cardPicture.setImageResource(nextCard.image)
             if (nextCard.value > startingCard.value) {
                 currentScore++
                 score.text = currentScore.toString()
-            } else currentScore--
+            } else {
+                currentScore--
+                score.text = currentScore.toString()
+            }
+            nextCard = deck.drawCard()
         }
+
+        quit.setOnClickListener {
+            val intent = Intent(this, EndActivity::class.java)
+            intent.putExtra("currentScore", currentScore)
+            startActivity(intent)
+        }
+
     }
+
 }
