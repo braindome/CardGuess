@@ -7,6 +7,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
+//TODO Comments and descriptions
+
 class GameActivity : AppCompatActivity() {
 
     lateinit var score : TextView
@@ -27,8 +29,6 @@ class GameActivity : AppCompatActivity() {
         quit = findViewById(R.id.quitButtonView)
         cardPicture = findViewById(R.id.randomCardImgView)
         score = findViewById(R.id.streakTextView)
-
-
 
         play()
 
