@@ -9,10 +9,12 @@
 
     <TextView
         android:id="@+id/finalScoreView"
-        android:layout_width="0dp"
-        android:layout_height="110dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:fontFamily="@font/unkempt"
         android:text="@string/final_score"
+        android:textAlignment="center"
         android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,10 +32,11 @@
 
     <TextView
         android:id="@+id/replayButtonView"
-        android:layout_width="241dp"
-        android:layout_height="99dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:background="@drawable/rounded_corner_dark"
+        android:fontFamily="@font/unkempt"
         android:text="@string/play_again"
         android:textAlignment="center"
         android:textColor="#BAFFFFFF"
