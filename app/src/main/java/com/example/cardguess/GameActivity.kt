@@ -1,8 +1,8 @@
 package com.example.cardguess
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +16,7 @@ class GameActivity : AppCompatActivity() {
     lateinit var higher : TextView
     lateinit var quit : TextView
     lateinit var cardPicture : ImageView
+    lateinit var scoreText : String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +30,8 @@ class GameActivity : AppCompatActivity() {
         quit = findViewById(R.id.quitButtonView)
         cardPicture = findViewById(R.id.randomCardImgView)
         score = findViewById(R.id.streakTextView)
+        scoreText = getString(R.string.current_score)
+
 
         play()
 
@@ -36,6 +39,7 @@ class GameActivity : AppCompatActivity() {
 
 
     //TODO Layout rework, make it prettier.
+    @SuppressLint("SetTextI18n")
     fun play() {
 
         val deck = CardDeck()
@@ -44,30 +48,32 @@ class GameActivity : AppCompatActivity() {
         var nextCard = deck.randomCard()
 
 
-        Log.d("!!!", startingCard.value.toString())
-
         cardPicture.setImageResource(startingCard.image)
 
         lower.setOnClickListener {
+
             cardPicture.setImageResource(nextCard.image)
+
             if (nextCard.value < startingCard.value) {
                 currentScore++
-                score.text = currentScore.toString()
+                score.text = "$scoreText $currentScore"
             } else {
                 currentScore--
-                score.text = currentScore.toString()
+                score.text = "$scoreText $currentScore"
             }
             nextCard = deck.drawCard()
         }
 
         higher.setOnClickListener {
+
             cardPicture.setImageResource(nextCard.image)
+
             if (nextCard.value > startingCard.value) {
                 currentScore++
-                score.text = currentScore.toString()
+                score.text = "$scoreText $currentScore"
             } else {
                 currentScore--
-                score.text = currentScore.toString()
+                score.text = "$scoreText $currentScore"
             }
             nextCard = deck.drawCard()
         }

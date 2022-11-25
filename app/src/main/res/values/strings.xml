@@ -3,6 +3,7 @@
     <string name="game_desc">Will the next card be higher or lower?</string>
     <!--    TODO: add link to score and final score var-->
     <string name="score_counter">SCORE: </string>
-    <string name="final_score">FINAL SCORE: </string>
+    <string name="final_score">FINAL SCORE:</string>
     <string name="play_again"><p>PLAY</p> AGAIN?</string>
+    <string name="current_score">SCORE: </string>
 </resources>
