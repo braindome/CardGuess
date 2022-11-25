@@ -17,7 +17,6 @@ class EndActivity : AppCompatActivity() {
         score = findViewById(R.id.scoreValue)
         replay = findViewById(R.id.replayButtonView)
 
-        val bundle : Bundle? = intent.extras
         score.text = intent.getIntExtra("currentScore", 666).toString()
 
         replay.setOnClickListener {
