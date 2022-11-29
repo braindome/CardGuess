@@ -16,86 +16,104 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/gameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/rounded_corner_view"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="@string/game_desc"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/randomCardImgView" />
-
-    <TextView
-        android:id="@+id/streakTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:background="@drawable/rounded_corner_red"
-        android:fontFamily="@font/unkempt"
-        android:padding="10dp"
-        android:text="@string/score_counter"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/quitButtonView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gameTextView" />
-
-    <TextView
-        android:id="@+id/quitButtonView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/rounded_corner_view"
-        android:fontFamily="@font/unkempt"
-        android:paddingLeft="20dp"
-        android:paddingTop="5dp"
-        android:paddingRight="20dp"
-        android:paddingBottom="5dp"
-        android:text="QUIT"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="387dp"
+        android:layout_height="352dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/minusButtonView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_corner_light"
-        android:gravity="center"
-        android:text="-"
-        android:textAlignment="center"
-        android:textDirection="locale"
-        android:textSize="60sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gameTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/randomCardImgView"
+        app:layout_constraintVertical_bias="0.0">
 
-    <TextView
-        android:id="@+id/plusButtonView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="80dp"
-        android:background="@drawable/rounded_corner_dark"
-        android:gravity="center"
-        android:text="+"
-        android:textAlignment="center"
-        android:textColor="#E0E1DD"
-        android:textSize="60sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/minusButtonView"
-        app:layout_constraintTop_toBottomOf="@+id/gameTextView" />
+        <TextView
+            android:id="@+id/minusButtonView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_corner_light"
+            android:gravity="center"
+            android:text="-"
+            android:textAlignment="center"
+            android:textDirection="locale"
+            android:textSize="60sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gameTextView" />
+
+        <TextView
+            android:id="@+id/plusButtonView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="68dp"
+            android:background="@drawable/rounded_corner_dark"
+            android:gravity="center"
+            android:text="+"
+            android:textAlignment="center"
+            android:textColor="#E0E1DD"
+            android:textSize="60sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gameTextView" />
+
+        <TextView
+            android:id="@+id/streakTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/rounded_corner_red"
+            android:fontFamily="@font/unkempt"
+            android:padding="10dp"
+            android:text="@string/score_counter"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gameTextView" />
+
+        <TextView
+            android:id="@+id/quitButtonView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_view"
+            android:fontFamily="@font/unkempt"
+            android:paddingLeft="20dp"
+            android:paddingTop="5dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:text="QUIT"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/streakTextView" />
+
+        <TextView
+            android:id="@+id/gameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_corner_view"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/game_desc"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="left"
+            tools:layout_editor_absoluteX="190dp"
+            tools:layout_editor_absoluteY="156dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
