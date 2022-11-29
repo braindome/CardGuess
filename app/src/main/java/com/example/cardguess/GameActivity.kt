@@ -3,11 +3,11 @@ package com.example.cardguess
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
-//TODO Comments and descriptions
 
 class GameActivity : AppCompatActivity() {
 
@@ -32,22 +32,22 @@ class GameActivity : AppCompatActivity() {
         score = findViewById(R.id.streakTextView)
         scoreText = getString(R.string.current_score)
 
-
         play()
 
     }
 
 
-    //TODO Layout rework, make it prettier.
+    //Play loop.
     @SuppressLint("SetTextI18n")
     fun play() {
 
+        //Initializes deck and score variables, picks two random cards to use as start and following.
         val deck = CardDeck()
         var currentScore = 0
-        val startingCard = deck.randomCard()
-        var nextCard = deck.randomCard()
+        var startingCard = deck.drawCard()
+        var nextCard = deck.drawCard()
 
-
+        //Starts with a random card with corresponding picture.
         cardPicture.setImageResource(startingCard.image)
 
         lower.setOnClickListener {
@@ -55,13 +55,17 @@ class GameActivity : AppCompatActivity() {
             cardPicture.setImageResource(nextCard.image)
 
             if (nextCard.value < startingCard.value) {
-                currentScore++
+                currentScore += 1
                 score.text = "$scoreText $currentScore"
             } else {
-                currentScore--
+                currentScore -= 1
                 score.text = "$scoreText $currentScore"
             }
+
+            startingCard = nextCard
             nextCard = deck.drawCard()
+            Log.d("!!!", "nextCard value: ${nextCard.value}")
+            Log.d("!!!", "startingCard value: ${startingCard.value}")
         }
 
         higher.setOnClickListener {
@@ -69,13 +73,17 @@ class GameActivity : AppCompatActivity() {
             cardPicture.setImageResource(nextCard.image)
 
             if (nextCard.value > startingCard.value) {
-                currentScore++
+                currentScore += 1
                 score.text = "$scoreText $currentScore"
             } else {
-                currentScore--
+                currentScore -= 1
                 score.text = "$scoreText $currentScore"
             }
+
+            startingCard = nextCard
             nextCard = deck.drawCard()
+            Log.d("!!!", "nextCard value: ${nextCard.value}")
+            Log.d("!!!", "startingCard value: ${startingCard.value}")
         }
 
         quit.setOnClickListener {

@@ -7,10 +7,12 @@ class CardDeck {
     val deck = mutableListOf<Card>()
 
     init {
+        //Initializes and shuffles the deck.
         initDeck()
         deck.shuffle()
     }
 
+    //Creates the card deck.
     fun initDeck() {
 
         deck.add(Card(2, R.drawable.clubs2))
@@ -68,10 +70,12 @@ class CardDeck {
 
     }
 
+    //Picks a random card.
     fun randomCard(): Card {
         return deck[Random.nextInt(deck.size)]
     }
 
+    //Shuffles deck and returns a random card.
     fun drawCard() : Card {
         deck.shuffle()
         return randomCard()

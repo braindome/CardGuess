@@ -17,8 +17,10 @@ class EndActivity : AppCompatActivity() {
         score = findViewById(R.id.scoreValue)
         replay = findViewById(R.id.replayButtonView)
 
-        score.text = intent.getIntExtra("currentScore", 666).toString()
+        score.text = intent.getIntExtra("currentScore", 42).toString()
 
+
+        //Replay button restarts the game and resets the score.
         replay.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)

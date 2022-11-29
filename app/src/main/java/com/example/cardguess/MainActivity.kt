@@ -15,6 +15,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+    //Starts game, opens game activity.
     fun init() {
         val button = findViewById<TextView>(R.id.startTextView)
         button.setOnClickListener {
