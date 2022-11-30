@@ -2,9 +2,10 @@ package com.example.cardguess
 
 import kotlin.random.Random
 
-class CardDeck {
+object CardDeck {
 
     val deck = mutableListOf<Card>()
+    var pastCards = mutableListOf<Card>()
 
     init {
         //Initializes and shuffles the deck.
@@ -79,6 +80,10 @@ class CardDeck {
     fun drawCard() : Card {
         deck.shuffle()
         return randomCard()
+    }
+
+    fun addToHistory(card : Card) {
+        pastCards.add(card)
     }
 
 
