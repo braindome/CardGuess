@@ -18,7 +18,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="387dp"
-        android:layout_height="352dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
@@ -62,7 +62,7 @@
             android:id="@+id/streakTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="100dp"
             android:background="@drawable/rounded_corner_red"
             android:fontFamily="@font/unkempt"
             android:padding="10dp"
@@ -79,6 +79,7 @@
             android:id="@+id/quitButtonView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:background="@drawable/rounded_corner_view"
             android:fontFamily="@font/unkempt"
             android:paddingLeft="20dp"
