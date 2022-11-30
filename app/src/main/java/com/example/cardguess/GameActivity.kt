@@ -17,6 +17,7 @@ class GameActivity : AppCompatActivity() {
     lateinit var quit : TextView
     lateinit var cardPicture : ImageView
     lateinit var scoreText : String
+    lateinit var historyButton : TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +31,7 @@ class GameActivity : AppCompatActivity() {
         quit = findViewById(R.id.quitButtonView)
         cardPicture = findViewById(R.id.randomCardImgView)
         score = findViewById(R.id.streakTextView)
+        historyButton = findViewById(R.id.historyView)
         scoreText = getString(R.string.current_score)
 
         play()
@@ -42,7 +44,7 @@ class GameActivity : AppCompatActivity() {
     fun play() {
 
         //Initializes deck and score variables, picks two random cards to use as start and following.
-        val deck = CardDeck()
+        val deck = CardDeck
         var currentScore = 0
         var startingCard = deck.drawCard()
         var nextCard = deck.drawCard()
@@ -62,6 +64,7 @@ class GameActivity : AppCompatActivity() {
                 score.text = "$scoreText $currentScore"
             }
 
+            CardDeck.pastCards.add(startingCard)
             startingCard = nextCard
             nextCard = deck.drawCard()
             Log.d("!!!", "nextCard value: ${nextCard.value}")
@@ -80,6 +83,7 @@ class GameActivity : AppCompatActivity() {
                 score.text = "$scoreText $currentScore"
             }
 
+            CardDeck.pastCards.add(startingCard)
             startingCard = nextCard
             nextCard = deck.drawCard()
             Log.d("!!!", "nextCard value: ${nextCard.value}")
@@ -92,6 +96,12 @@ class GameActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        historyButton.setOnClickListener {
+            val intent = Intent(this, HistoryActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
 }
+

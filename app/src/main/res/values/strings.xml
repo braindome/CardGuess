@@ -7,4 +7,6 @@ Click the button to start playing.</string>
     <string name="final_score">FINAL SCORE:</string>
     <string name="play_again"><p>PLAY</p> AGAIN?</string>
     <string name="current_score">SCORE: </string>
+    <string name="history_button">History</string>
+    <string name="back_button">BACK</string>
 </resources>
