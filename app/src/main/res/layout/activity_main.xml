@@ -35,7 +35,7 @@
         android:background="@drawable/rounded_corner_view"
         android:lineSpacingExtra="3sp"
         android:padding="10dp"
-        android:text="The rules are simple: two choices: higher or lower. You guess right, you get one point. But if you get it wrong, you lose. Click the button to start playing."
+        android:text="@string/game_rules"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textSize="16sp"

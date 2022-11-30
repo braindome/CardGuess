@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">CardGuess</string>
+    <string name="game_rules">The rules are simple: guess if the next card\'s value will be higher or lower than the previous card by clicking on the [+] or [-] button.  You guess right, you get one point. But if you get it wrong, you lose one. You can play as much as you want and you can have negative score.
+Click the button to start playing.</string>
     <string name="game_desc">Will the next card be higher or lower?</string>
-    <!--    TODO: add link to score and final score var-->
     <string name="score_counter">SCORE: </string>
     <string name="final_score">FINAL SCORE:</string>
     <string name="play_again"><p>PLAY</p> AGAIN?</string>
