@@ -71,8 +71,9 @@ class GameActivity : AppCompatActivity() {
                 score.text = "$scoreText $currentScore"
             }
 
-            if (currentScore == 0) {
+            if (currentScore <= 0) {
                 lives -= 1
+                currentScore = 0
                 if (lives == 2) {
                     lifeThree.setImageResource(0)
                 } else if (lives == 1) {
@@ -104,8 +105,9 @@ class GameActivity : AppCompatActivity() {
                 score.text = "$scoreText $currentScore"
             }
 
-            if (currentScore == 0) {
+            if (currentScore <= 0) {
                 lives -= 1
+                currentScore = 0
                 if (lives == 2) {
                     lifeThree.setImageResource(0)
                 } else if (lives == 1) {
@@ -124,7 +126,7 @@ class GameActivity : AppCompatActivity() {
             Log.d("!!!", "nextCard value: ${nextCard.value}")
             Log.d("!!!", "startingCard value: ${startingCard.value}")
         }
-        
+
 
         quit.setOnClickListener {
             val intent = Intent(this, EndActivity::class.java)
