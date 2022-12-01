@@ -18,6 +18,9 @@ class GameActivity : AppCompatActivity() {
     lateinit var cardPicture : ImageView
     lateinit var scoreText : String
     lateinit var historyButton : TextView
+    lateinit var lifeOne : ImageView
+    lateinit var lifeTwo : ImageView
+    lateinit var lifeThree : ImageView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +35,9 @@ class GameActivity : AppCompatActivity() {
         cardPicture = findViewById(R.id.randomCardImgView)
         score = findViewById(R.id.streakTextView)
         historyButton = findViewById(R.id.historyView)
+        lifeOne = findViewById(R.id.lifeIcon1)
+        lifeTwo = findViewById(R.id.lifeIcon2)
+        lifeThree = findViewById(R.id.lifeIcon3)
         scoreText = getString(R.string.current_score)
 
         play()
@@ -45,6 +51,7 @@ class GameActivity : AppCompatActivity() {
 
         //Initializes deck and score variables, picks two random cards to use as start and following.
         val deck = CardDeck
+        var lives = 3
         var currentScore = 0
         var startingCard = deck.drawCard()
         var nextCard = deck.drawCard()
@@ -62,6 +69,20 @@ class GameActivity : AppCompatActivity() {
             } else {
                 currentScore -= 1
                 score.text = "$scoreText $currentScore"
+            }
+
+            if (currentScore == 0) {
+                lives -= 1
+                if (lives == 2) {
+                    lifeThree.setImageResource(0)
+                } else if (lives == 1) {
+                    lifeTwo.setImageResource(0)
+                } else if (lives == 0) {
+                    lifeOne.setImageResource(0)
+                }
+                lifeCheck(lives)
+            } else if (currentScore == 10) {
+                //TODO win message
             }
 
             CardDeck.pastCards.add(startingCard)
@@ -83,12 +104,27 @@ class GameActivity : AppCompatActivity() {
                 score.text = "$scoreText $currentScore"
             }
 
+            if (currentScore == 0) {
+                lives -= 1
+                if (lives == 2) {
+                    lifeThree.setImageResource(0)
+                } else if (lives == 1) {
+                    lifeTwo.setImageResource(0)
+                } else if (lives == 0) {
+                    lifeOne.setImageResource(0)
+                }
+                lifeCheck(lives)
+            } else if (currentScore == 10) {
+                //TODO win message
+            }
+
             CardDeck.pastCards.add(startingCard)
             startingCard = nextCard
             nextCard = deck.drawCard()
             Log.d("!!!", "nextCard value: ${nextCard.value}")
             Log.d("!!!", "startingCard value: ${startingCard.value}")
         }
+        
 
         quit.setOnClickListener {
             val intent = Intent(this, EndActivity::class.java)
@@ -102,6 +138,14 @@ class GameActivity : AppCompatActivity() {
         }
 
     }
+
+    fun lifeCheck(life : Int) {
+        if ( life == 0 ) {
+            val intent = Intent(this, EndActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
 
 }
 
