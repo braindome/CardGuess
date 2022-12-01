@@ -71,7 +71,7 @@ class GameActivity : AppCompatActivity() {
                 score.text = "$scoreText $currentScore"
             }
 
-            if (currentScore <= 0) {
+            if (currentScore <= -1) {
                 lives -= 1
                 currentScore = 0
                 if (lives == 2) {
@@ -105,7 +105,7 @@ class GameActivity : AppCompatActivity() {
                 score.text = "$scoreText $currentScore"
             }
 
-            if (currentScore <= 0) {
+            if (currentScore <= -1) {
                 lives -= 1
                 currentScore = 0
                 if (lives == 2) {
@@ -117,7 +117,10 @@ class GameActivity : AppCompatActivity() {
                 }
                 lifeCheck(lives)
             } else if (currentScore == 10) {
-                //TODO win message
+                val intent = Intent(this, EndActivity::class.java)
+                val win = "win"
+                intent.putExtra(win, 1)
+                startActivity(intent)
             }
 
             CardDeck.pastCards.add(startingCard)
@@ -144,6 +147,8 @@ class GameActivity : AppCompatActivity() {
     fun lifeCheck(life : Int) {
         if ( life == 0 ) {
             val intent = Intent(this, EndActivity::class.java)
+            val lose = "lost"
+            intent.putExtra(lose, 1)
             startActivity(intent)
         }
     }

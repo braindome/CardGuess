@@ -9,4 +9,7 @@ Click the button to start playing.</string>
     <string name="current_score">SCORE: </string>
     <string name="history_button">History</string>
     <string name="back_button">BACK</string>
+    <string name="lost_fragment">You ran out of lives.</string>
+    <string name="win_fragment">You made it.</string>
+    <string name="quit_fragment">You got tired and quit.</string>
 </resources>
